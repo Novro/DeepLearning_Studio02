@@ -2,3 +2,5 @@
 README_TEMPLATE.md
 /my_train/*
 /my_val/*
+train_sources.csv
+/__pycache__/*
