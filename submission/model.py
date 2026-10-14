@@ -14,10 +14,15 @@ from torchvision import models, transforms
 NUM_CLASSES = 5
 
 
+
 def get_model():
-    model = models.resnet18(weights=None)
-    model.fc = nn.Linear(model.fc.in_features, NUM_CLASSES)
+    model = models.mobilenet_v3_large(weights=None)
+    model.classifier[3] = nn.Linear(
+        model.classifier[3].in_features,
+        NUM_CLASSES
+    )
     return model
+
 
 
 def get_transform():
